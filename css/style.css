@@ -81,7 +81,6 @@ section {
   height: 325px;
   margin-top: 40px;
   background: rgb(125, 153, 152);
-  opacity: 0.60;
   border-width: 5px;
   border-style: inset;
 }
@@ -101,5 +100,22 @@ header {
 }
 
 footer {
+  display: flex;
   height: 15%;
+  font-size: 33px;
+}
+
+#eat-btn,
+#sleep-btn,
+#play-btn {
+  background: transparent;
+  border: none;
+  outline-style: none;
+}
+
+#eat-btn:hover,
+#sleep-btn:hover,
+#play-btn:hover {
+  background: forestgreen;
+  opacity: 0.60;
 }
