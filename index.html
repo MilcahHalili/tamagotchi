@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/app.js"></script>
+  <script defer src="js/app.js"></script>
   <title>Tamagotchi</title>
 </head>
 <body>
@@ -16,14 +16,18 @@
   <main>
     <aside>
       <button>INSTRUCTIONS</button>
-      <button>PLAY</button>
+      <button id="play-btn">PLAY</button>
     </aside>
     <section>
       <div id="egg-container">
         <div id="egg-shape">
           <div id="playpen">
+            <header>
+              <h3 id="pet-name"></h3>
+            </header>
             <div id="tamagotchi">
               🥚
+            <footer></footer>
             </div>
           </div>
         </div>
