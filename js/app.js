@@ -7,3 +7,7 @@ class Pet {
     this.age = 0;
   }
 }
+
+const petName = prompt('Name your Tamagotchi', '')
+
+const tamagotchi = new Pet(petName);
