@@ -1,13 +1,5 @@
 /** 
 Specifications:
-Create a Class (JS Class, look at your notes if your forget) for your tomagotchi
-Instatiate your Tomagotchi
-Display a character of your choice on the screen to represent your pet
-Display the following metrics for your pet:
-Hunger (1-10 scale)
-Sleepiness (1-10 scale)
-Boredom (1-10 scale)
-Age
 Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
 Add the ability to name your pet.
 Style the page.
@@ -32,7 +24,7 @@ class Pet {
     this.name = name;
     this.hunger = 0;
     this.sleepiness = 0;
-    this.boredome = 0;
+    this.boredom = 0;
     this.age = 0;
   }
 }
@@ -48,13 +40,23 @@ const tamagotchi = new Pet(petName);
 
 /** cached DOM elements */
 const playBtn = document.getElementById('play-btn')
-const petNameH3 = document.getElementById('pet-name')
+const petNameElems = document.querySelectorAll('.pet-name')
+const age = document.getElementById('age')
+const hunger = document.getElementById('hunger')
+const sleepiness = document.getElementById('sleepiness')
+const boredom = document.getElementById('boredom')
 
 /* event listeners */
 
 /* functions */
 function startGame() {
-  petNameH3.textContent = tamagotchi.name
+  for (let i = 0; i < petNameElems.length; i++) {
+    petNameElems[i].textContent = tamagotchi.name
+  }
+  age.textContent = tamagotchi.age
+  hunger.textContent = tamagotchi.hunger
+  sleepiness.textContent = tamagotchi.sleepiness
+  boredom.textContent = tamagotchi.boredom
 }
 
 startGame()

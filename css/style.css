@@ -37,10 +37,14 @@ main {
 
 aside {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
+  justify-content: center;
   align-items: center;
-  text-align: center;
   width: 20%;
+}
+
+.metric {
+  margin: 15px 0;
 }
 
 button {
