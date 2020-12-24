@@ -66,16 +66,41 @@ const displayPetMetrics = () => {
 const decrementPetMetric = (metric) => {
   if (tamagotchi[`${metric}`] === 0) {
     return
-  }
+  } else if (tamagotchi[`${metric}`] < 1) {
+    tamagotchi[`${metric}`] = 0
+    displayPetMetrics()
+  } else {
     tamagotchi[metric]--
     console.log(tamagotchi[`${metric}`])
+    displayPetMetrics()
+  }
 }
+
+const incrementPetMetrics = () => {
+  setInterval(() => {
+    tamagotchi.hunger += 0.25
+    console.log(tamagotchi.hunger)
+    displayPetMetrics()
+  }, 10000)
+  setInterval(() => {
+    tamagotchi.boredom += 0.5
+    console.log(tamagotchi.boredom)
+    displayPetMetrics()
+  }, 15000)
+  setInterval(() => {
+    tamagotchi.sleepiness += 0.1
+    console.log(tamagotchi.sleepiness)
+    displayPetMetrics()
+  }, 20000)
+}
+
 
 const startGame = () => {
-  displayPetName()
-  displayPetMetrics()
+  incrementPetMetrics()
 }
 
+displayPetName()
+displayPetMetrics()
 startGame()
 
 /* event listeners */
