@@ -1,9 +1,6 @@
 /** 
 Specifications:
-Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
 Style the page.
-Increase your pet's age every x minutes
-Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
 You pet should die if Hunger, Boredom, or Sleepiness hits 10.
 Animate your pet across the screen while it's alive.
 
@@ -33,6 +30,7 @@ class Pet {
 
 // const
 const petName = prompt('Name your Tamagotchi', '')
+const metrics = ['age', 'hunger', 'sleepiness', 'boredom']
 // instances
 const tamagotchi = new Pet(petName);
 // variables
@@ -92,6 +90,11 @@ const incrementPetMetrics = () => {
     console.log(tamagotchi.sleepiness)
     displayPetMetrics()
   }, 20000)
+  setInterval(() => {
+    tamagotchi.age += 1
+    console.log(tamagotchi.age)
+    displayPetMetrics()
+  }, 60000)
 }
 
 
