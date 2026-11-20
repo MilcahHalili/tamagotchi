@@ -33,6 +33,7 @@ A moody, night-lit virtual pet — the spiritual reboot of a 2020 vanilla-JS Tam
 - Vite + React 19 + TypeScript
 - Tailwind CSS v4
 - Framer Motion
+- Self-hosted pixel fonts: **Press Start 2P** (headings) + **VT323** (body/UI) — no runtime Google Fonts
 - Web Audio API / Web Share API / localStorage
 
 ## Local development

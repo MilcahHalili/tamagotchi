@@ -34,11 +34,11 @@ function drawCard(canvas: HTMLCanvasElement, state: GameState) {
   ctx.shadowBlur = 0
 
   ctx.fillStyle = '#39ff14'
-  ctx.font = '700 28px Orbitron, sans-serif'
+  ctx.font = '22px "Press Start 2P", monospace'
   ctx.fillText('NEON GOTCHI', 72, 110)
 
   ctx.fillStyle = '#ffb020'
-  ctx.font = '700 48px Orbitron, sans-serif'
+  ctx.font = '36px "Press Start 2P", monospace'
   ctx.fillText(state.name, 72, 190)
 
   const avg = state.careSamples ? state.careScore / state.careSamples : 0
@@ -50,7 +50,7 @@ function drawCard(canvas: HTMLCanvasElement, state: GameState) {
   ]
 
   ctx.fillStyle = '#9dff7a'
-  ctx.font = '36px VT323, monospace'
+  ctx.font = '40px VT323, monospace'
   lines.forEach((line, i) => {
     ctx.fillText(line, 72, 280 + i * 56)
   })
@@ -73,7 +73,7 @@ function drawCard(canvas: HTMLCanvasElement, state: GameState) {
   })
 
   ctx.fillStyle = '#6b7a8a'
-  ctx.font = '22px Rajdhani, sans-serif'
+  ctx.font = '28px VT323, monospace'
   ctx.fillText('neon-gotchi · handheld night companion', 72, h - 72)
 }
 
@@ -85,8 +85,23 @@ export function ShareCard({ state, onClose }: Props) {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    drawCard(canvas, state)
-    setPreview(canvas.toDataURL('image/png'))
+    let cancelled = false
+    void (async () => {
+      try {
+        await Promise.all([
+          document.fonts.load('22px "Press Start 2P"'),
+          document.fonts.load('40px VT323'),
+        ])
+      } catch {
+        // Fall through with system monospace if load fails
+      }
+      if (cancelled || !canvasRef.current) return
+      drawCard(canvasRef.current, state)
+      setPreview(canvasRef.current.toDataURL('image/png'))
+    })()
+    return () => {
+      cancelled = true
+    }
   }, [state])
 
   async function share() {
@@ -136,14 +151,14 @@ export function ShareCard({ state, onClose }: Props) {
               sfx.click()
               onClose()
             }}
-            className="flex-1 rounded-xl border border-slate px-3 py-2.5 font-display text-[11px] tracking-wider text-mute uppercase"
+            className="flex-1 rounded-xl border border-slate px-3 py-2.5 font-pixel text-xl tracking-wide text-mute uppercase"
           >
             Close
           </button>
           <button
             type="button"
             onClick={() => void share()}
-            className="flex-[2] rounded-xl border border-neon/50 bg-neon/15 px-3 py-2.5 font-display text-[11px] tracking-wider text-neon uppercase hover:box-glow-neon"
+            className="flex-[2] rounded-xl border border-neon/50 bg-neon/15 px-3 py-2.5 font-pixel text-xl tracking-wide text-neon uppercase hover:box-glow-neon"
           >
             Share / Download
           </button>
@@ -151,7 +166,7 @@ export function ShareCard({ state, onClose }: Props) {
       }
     >
       <div className="space-y-3">
-        <h2 className="font-display text-lg text-neon text-glow-neon">Share Card</h2>
+        <h2 className="font-display text-sm leading-relaxed text-neon text-glow-neon">Share Card</h2>
         <canvas ref={canvasRef} className="hidden" />
         {preview && (
           <img

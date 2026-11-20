@@ -35,8 +35,10 @@ export function GameScreen({ state, actions, devMode, onShare }: Props) {
       topBar={
         <div className="mb-2 flex items-center justify-between gap-2 px-1">
           <div>
-            <p className="font-display text-sm text-neon text-glow-neon">{state.name}</p>
-            <p className="font-pixel text-base text-mute">
+            <p className="font-display text-[11px] leading-relaxed text-neon text-glow-neon sm:text-xs">
+              {state.name}
+            </p>
+            <p className="font-pixel text-xl text-mute">
               {stageLabel(state.stage, state.adultForm)} · {formatAge(state.ageMs)}
             </p>
           </div>
@@ -110,7 +112,7 @@ export function GameScreen({ state, actions, devMode, onShare }: Props) {
 
       {devMode && (
         <div className="mt-3 rounded-lg border border-dashed border-amber/40 bg-void/50 p-2">
-          <p className="mb-1 font-display text-[9px] tracking-wider text-amber uppercase">
+          <p className="mb-1 font-pixel text-lg tracking-wide text-amber uppercase">
             Dev time skip
           </p>
           <div className="flex flex-wrap gap-1">
@@ -147,7 +149,7 @@ function IconBtn({ label, onClick }: { label: string; onClick: () => void }) {
         sfx.click()
         onClick()
       }}
-      className="rounded-lg border border-neon/25 bg-steel/40 px-2 py-1 font-display text-[9px] tracking-wider text-neon/80 uppercase hover:border-neon/50"
+      className="rounded-lg border border-neon/25 bg-steel/40 px-2 py-1 font-pixel text-base tracking-wide text-neon/80 uppercase hover:border-neon/50"
     >
       {label}
     </button>

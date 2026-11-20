@@ -32,10 +32,10 @@ export default function App() {
 
       <main className="relative z-[1] mx-auto flex min-h-dvh max-w-lg flex-col justify-center px-4 py-8 sm:py-12">
         <header className="mb-6 text-center sm:mb-8">
-          <p className="font-display text-[11px] tracking-[0.45em] text-amber/80 uppercase">
+          <p className="font-pixel text-xl tracking-wide text-amber/80 uppercase">
             Handheld Night Unit
           </p>
-          <h1 className="mt-1 font-display text-3xl font-800 text-neon text-glow-neon sm:text-4xl">
+          <h1 className="mt-2 font-display text-base leading-relaxed text-neon text-glow-neon sm:text-lg">
             NEON GOTCHI
           </h1>
         </header>
@@ -77,7 +77,7 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
 
-        <p className="mt-6 text-center font-ui text-xs text-mute">
+        <p className="mt-6 text-center font-pixel text-lg text-mute">
           Progress saves locally · Add <code className="text-neon/70">?dev=1</code> for time skip
         </p>
       </main>

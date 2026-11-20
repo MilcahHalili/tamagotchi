@@ -38,8 +38,8 @@ function Btn({
         pulse ? 'box-glow-amber' : ''
       }`}
     >
-      <span className="block font-display text-[10px] tracking-wider uppercase">{label}</span>
-      {sub && <span className="font-pixel text-sm text-mute">{sub}</span>}
+      <span className="block font-pixel text-xl leading-none tracking-wide uppercase">{label}</span>
+      {sub && <span className="mt-0.5 block font-pixel text-base leading-none text-mute">{sub}</span>}
     </button>
   )
 }

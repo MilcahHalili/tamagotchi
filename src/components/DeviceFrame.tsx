@@ -34,7 +34,7 @@ export function DeviceFrame({ children, lightsOff = false, topBar, footer }: Pro
             <span className="h-2 w-2 rounded-full bg-amber/80" />
             <span className="h-2 w-2 rounded-full bg-slate" />
           </div>
-          <p className="font-display text-[10px] tracking-[0.35em] text-neon/70 uppercase">
+          <p className="font-pixel text-lg tracking-wide text-neon/70 uppercase">
             NEON GOTCHI
           </p>
           <div className="h-1.5 w-10 rounded-full bg-steel" />

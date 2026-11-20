@@ -95,12 +95,12 @@ export function ReactionGame({ onDone }: Props) {
       }
     >
       <div className="flex h-full flex-col items-center justify-center gap-6">
-        <h2 className="font-display text-lg text-neon text-glow-neon">Reaction Pulse</h2>
-        <p className="font-ui text-sm text-mute">Tap when the ring flashes neon.</p>
+        <h2 className="font-display text-sm leading-relaxed text-neon text-glow-neon">Reaction Pulse</h2>
+        <p className="font-pixel text-xl text-mute">Tap when the ring flashes neon.</p>
         <motion.button
           type="button"
           onClick={onTap}
-          className={`flex h-40 w-40 items-center justify-center rounded-full border-4 font-display text-sm tracking-wider uppercase ${
+          className={`flex h-40 w-40 items-center justify-center rounded-full border-4 font-pixel text-2xl tracking-wide uppercase ${
             phase === 'go'
               ? 'border-neon bg-neon/20 text-neon box-glow-neon'
               : 'border-slate bg-steel/40 text-mute'

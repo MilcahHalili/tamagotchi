@@ -20,7 +20,7 @@ export function StatBar({ label, value, accent = 'neon' }: Props) {
 
   return (
     <div className="w-full">
-      <div className="mb-0.5 flex items-baseline justify-between font-pixel text-lg leading-none text-neon/80">
+      <div className="mb-0.5 flex items-baseline justify-between font-pixel text-xl leading-none text-neon/80">
         <span>{label}</span>
         <span className={critical ? 'text-sunset' : ''}>{Math.round(clamped)}</span>
       </div>

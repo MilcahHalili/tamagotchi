@@ -68,8 +68,8 @@ export function CatchGame({ onDone }: Props) {
       }
     >
       <div className="relative flex h-full min-h-[360px] flex-col">
-        <h2 className="font-display text-lg text-amber text-glow-amber">Orb Catch</h2>
-        <p className="mb-2 font-ui text-sm text-mute">Tap glowing orbs before they fade.</p>
+        <h2 className="font-display text-sm leading-relaxed text-amber text-glow-amber">Orb Catch</h2>
+        <p className="mb-2 font-pixel text-xl text-mute">Tap glowing orbs before they fade.</p>
         <div className="relative flex-1 overflow-hidden rounded-xl border border-neon/15 bg-void/40">
           {orbs.map((orb) => (
             <motion.button

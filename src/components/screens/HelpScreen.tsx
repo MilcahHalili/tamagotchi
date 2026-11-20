@@ -38,21 +38,21 @@ export function HelpScreen({ onClose }: Props) {
             sfx.click()
             onClose()
           }}
-          className="w-full rounded-xl border border-neon/50 bg-neon/15 px-3 py-2.5 font-display text-[11px] tracking-wider text-neon uppercase hover:box-glow-neon"
+          className="w-full rounded-xl border border-neon/50 bg-neon/15 px-3 py-2.5 font-pixel text-xl tracking-wide text-neon uppercase hover:box-glow-neon"
         >
           Back to device
         </button>
       }
     >
       <div className="space-y-4">
-        <h2 className="font-display text-xl text-neon text-glow-neon">Field Manual</h2>
+        <h2 className="font-display text-sm leading-relaxed text-neon text-glow-neon">Field Manual</h2>
         <ul className="space-y-3">
           {TIPS.map((tip) => (
             <li key={tip.title} className="border-l-2 border-amber/50 pl-3">
-              <h3 className="font-display text-[11px] tracking-wider text-amber uppercase">
+              <h3 className="font-pixel text-xl tracking-wide text-amber uppercase">
                 {tip.title}
               </h3>
-              <p className="mt-1 font-ui text-sm leading-snug text-mute">{tip.body}</p>
+              <p className="mt-1 font-pixel text-lg leading-snug text-mute">{tip.body}</p>
             </li>
           ))}
         </ul>
