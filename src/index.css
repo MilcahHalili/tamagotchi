@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./assets/fonts/PressStart2P-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("./assets/fonts/VT323-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-void: #07090b;
+  --color-charcoal: #0e1216;
+  --color-panel: #151b22;
+  --color-steel: #1c2430;
+  --color-slate: #2a3544;
+  --color-neon: #39ff14;
+  --color-neon-dim: #1faa0a;
+  --color-neon-glow: #7dff5a;
+  --color-amber: #ffb020;
+  --color-sunset: #ff7a18;
+  --color-lcd: #0a1f12;
+  --color-lcd-lit: #0d2a18;
+  --color-danger: #ff7a18;
+  --color-mute: #6b7a8a;
+  --font-display: "Press Start 2P", monospace;
+  --font-ui: "VT323", monospace;
+  --font-pixel: "VT323", monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-ui);
+    background: var(--color-void);
+    color: #e8eef5;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smooth: never;
+    text-rendering: optimizeSpeed;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+  }
+}
+
+@layer utilities {
+  .text-glow-neon {
+    text-shadow:
+      0 0 8px rgba(57, 255, 20, 0.55),
+      0 0 24px rgba(57, 255, 20, 0.25);
+  }
+
+  .text-glow-amber {
+    text-shadow:
+      0 0 8px rgba(255, 176, 32, 0.5),
+      0 0 20px rgba(255, 122, 24, 0.25);
+  }
+
+  .box-glow-neon {
+    box-shadow:
+      0 0 12px rgba(57, 255, 20, 0.35),
+      inset 0 0 18px rgba(57, 255, 20, 0.08);
+  }
+
+  .box-glow-amber {
+    box-shadow:
+      0 0 12px rgba(255, 176, 32, 0.3),
+      inset 0 0 14px rgba(255, 122, 24, 0.08);
+  }
+
+  .scanlines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      rgba(0, 0, 0, 0.12) 2px,
+      rgba(0, 0, 0, 0.12) 3px
+    );
+  }
+
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+}
